@@ -1,0 +1,61 @@
+.searchSlider {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  /* padding: 15px 0px; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* border-radius: 12px; */
+}
+
+/* TITLE */
+.searchSlider h3 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* SLIDER */
+.searchSlider .slider {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  /* padding: 5px 10px; */
+
+  scroll-behavior: smooth;
+}
+
+/* SCROLLBAR HIDE */
+.searchSlider .slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* BUTTON STYLE */
+.searchSlider .slider h3 {
+  min-width: 100px;
+  text-align: center;
+
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 12px;
+
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+/* HOVER */
+.searchSlider .slider h3:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* ACTIVE STATE (important) */
+.activeFilter {
+  background: #2563eb;
+  border-color: #2563eb;
+}

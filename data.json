@@ -1,0 +1,162 @@
+[
+  {
+    "name": "ASUS Zenbook Duo",
+    "brand": "ASUS",
+    "price": 65000,
+    "condition": "Excellent",
+    "image": "https://picsum.photos/seed/asus1/400/300",
+    "specs": {
+      "screenSize": "14 Inches",
+      "storage": "1TB SSD",
+      "processor": "Intel Core i7",
+      "ram": "32GB"
+    },
+    "description": "Dual screen premium laptop.",
+    "location": "Varanasi",
+    "return": "2 Days Return"
+  },
+  {
+    "name": "HP Pavilion 15",
+    "brand": "HP",
+    "price": 42000,
+    "condition": "Very Good",
+    "image": "https://picsum.photos/seed/hp1/400/300",
+    "specs": {
+      "screenSize": "15.6 Inches",
+      "storage": "512GB SSD",
+      "processor": "Intel Core i5",
+      "ram": "8GB"
+    },
+    "description": "Perfect for students.",
+    "location": "Delhi",
+    "return": "2 Days Return"
+  },
+  {
+    "name": "Dell Inspiron 14",
+    "brand": "Dell",
+    "price": 38000,
+    "condition": "Good",
+    "image": "https://picsum.photos/seed/dell1/400/300",
+    "specs": {
+      "screenSize": "14 Inches",
+      "storage": "256GB SSD",
+      "processor": "Intel Core i3",
+      "ram": "8GB"
+    },
+    "description": "Budget laptop.",
+    "location": "Mumbai",
+    "return": "1 Day Return"
+  },
+  {
+    "name": "MacBook Air M1",
+    "brand": "Apple",
+    "price": 70000,
+    "condition": "Excellent",
+    "image": "https://picsum.photos/seed/mac1/400/300",
+    "specs": {
+      "screenSize": "13 Inches",
+      "storage": "256GB SSD",
+      "processor": "M1",
+      "ram": "8GB"
+    },
+    "description": "Premium Apple laptop.",
+    "location": "Bangalore",
+    "return": "2 Days Return"
+  },
+  {
+    "name": "Lenovo ThinkPad T480",
+    "brand": "Lenovo",
+    "price": 30000,
+    "condition": "Very Good",
+    "image": "https://picsum.photos/seed/lenovo1/400/300",
+    "specs": {
+      "screenSize": "14 Inches",
+      "storage": "512GB SSD",
+      "processor": "Intel Core i5",
+      "ram": "8GB"
+    },
+    "description": "Business laptop.",
+    "location": "Lucknow",
+    "return": "3 Days Return"
+  },
+  {
+    "name": "Acer Aspire 5",
+    "brand": "Acer",
+    "price": 35000,
+    "condition": "Good",
+    "image": "https://picsum.photos/seed/acer1/400/300",
+    "specs": {
+      "screenSize": "15.6 Inches",
+      "storage": "512GB SSD",
+      "processor": "Intel Core i5",
+      "ram": "8GB"
+    },
+    "description": "Balanced performance.",
+    "location": "Kanpur",
+    "return": "2 Days Return"
+  },
+  {
+    "name": "Asus VivoBook 15",
+    "brand": "Asus",
+    "price": 28000,
+    "condition": "Good",
+    "image": "https://picsum.photos/seed/asus2/400/300",
+    "specs": {
+      "screenSize": "15.6 Inches",
+      "storage": "1TB HDD",
+      "processor": "Intel Core i3",
+      "ram": "4GB"
+    },
+    "description": "Affordable laptop.",
+    "location": "Patna",
+    "return": "1 Day Return"
+  },
+  {
+    "name": "Dell XPS 13",
+    "brand": "Dell",
+    "price": 80000,
+    "condition": "Excellent",
+    "image": "https://picsum.photos/seed/dell2/400/300",
+    "specs": {
+      "screenSize": "13 Inches",
+      "storage": "512GB SSD",
+      "processor": "Intel Core i7",
+      "ram": "16GB"
+    },
+    "description": "Premium ultrabook.",
+    "location": "Hyderabad",
+    "return": "3 Days Return"
+  },
+  {
+    "name": "HP EliteBook 840",
+    "brand": "HP",
+    "price": 37000,
+    "condition": "Very Good",
+    "image": "https://picsum.photos/seed/hp2/400/300",
+    "specs": {
+      "screenSize": "14 Inches",
+      "storage": "256GB SSD",
+      "processor": "Intel Core i5",
+      "ram": "8GB"
+    },
+    "description": "Office laptop.",
+    "location": "Jaipur",
+    "return": "2 Days Return"
+  },
+  {
+    "name": "Lenovo Legion 5",
+    "brand": "Lenovo",
+    "price": 75000,
+    "condition": "Excellent",
+    "image": "https://picsum.photos/seed/legion/400/300",
+    "specs": {
+      "screenSize": "15.6 Inches",
+      "storage": "1TB SSD",
+      "processor": "Ryzen 7",
+      "ram": "16GB"
+    },
+    "description": "Gaming laptop.",
+    "location": "Pune",
+    "return": "1 Day Return"
+  }
+]

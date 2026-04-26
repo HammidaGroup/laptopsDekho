@@ -1,0 +1,28 @@
+.homeMainDiv{
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+    /* position: absolute; */
+    top: 400px;
+    height: 100vh;
+    width: 100vw;
+    /* padding: 10px 0px; */
+}
+.card-cont{
+    /* background: #000; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    gap: 10px;
+    margin: 5px;
+    
+}
+@media (min-width:643px) {
+    .card-cont{
+        width: 45%;
+    }
+}

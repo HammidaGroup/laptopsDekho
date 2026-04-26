@@ -1,0 +1,60 @@
+.menuProfile-div{
+  /* background: #ad8181;  */
+  width: 100%;
+  height: 30px;
+  display: flex;
+  padding: 2px;  
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+}
+
+.menuProfile-div .profileImg{
+    height: 100%;
+
+    border-radius: 50%;
+
+}
+
+.menuProfile-div .right{
+ 
+
+    display: flex;
+    align-items: center;
+}
+.menuProfile-div .right .moreBtn{
+    height: 10px;
+    rotate: 180deg;
+    
+  
+}
+
+.menuProfile-div .right h3{
+    margin-left: 10px;
+    margin: 10px;
+    font-size: medium;
+}
+
+.menuProfile-div .menuProfileInfo-div{
+    position: absolute;
+    background: rgb(225, 219, 219);
+    border-radius: 5px;
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+    width: 100%;
+}
+.menuProfileInfo-div h3{
+    margin-top: 20px;
+    font-size: medium;
+}
+.menuProfileInfo-div .cutBtn{
+    height: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+
+}

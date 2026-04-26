@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(225, 219, 219);
+    height: 100px;
+    width: 100%;
+    /* position: absolute; */
+    top: 0;
+    z-index: 100;
+}
+.headerL img{
+height: 100px;
+cursor: pointer;
+}
+.headerR img{
+    height: 50px;
+    cursor: pointer;
+}
