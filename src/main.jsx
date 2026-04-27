@@ -8,7 +8,7 @@ import SearchContextProvider from './context/SearchContext.jsx'
 import MoreInfoContextProvider from './context/MoreInfoContext.jsx'
 
 createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
+ <BrowserRouter basename="/">
         <MenuConditionalStateProvider>
             <SearchContextProvider>
                 <MoreInfoContextProvider>
