@@ -15,7 +15,7 @@ formData.append("token",token)
  
 useEffect(()=>{
    const getProfileData= async ()=>{
-     const response  = await fetch("https://bookplace-backend.onrender.com/api/data/menuProfile",{
+     const response  = await fetch("https://laptopsDekho-backend.onrender.com/api/data/menuProfile",{
         method:"POST",
         body:formData
     })

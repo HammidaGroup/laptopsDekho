@@ -5,7 +5,7 @@ const JoinBtn = () => {
     const navigate = useNavigate()
     
     const joinBtnHandler = () => {
-       navigate("/join")
+       navigate("/login")
       };
   return (
     <button onClick={joinBtnHandler} className='joinBtn'>Join</button>

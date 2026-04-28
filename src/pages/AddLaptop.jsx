@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./AddLaptop.css";
 import axios from "axios";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
+import { useNavigate } from "react-router-dom";
+
 
 const AddLaptop = () => {
+const navigate = useNavigate();
+
   const [images, setImages] = useState([]);
   const [form, setForm] = useState({
     brandName: "",
@@ -15,6 +19,32 @@ const AddLaptop = () => {
     storage: "",
     location: ""
   });
+
+
+   // 🔐 Token Verify
+   
+    useEffect(() => {
+      const token = localStorage.getItem("token")
+  
+      if (!token) {
+        navigate("/login")
+        return
+      }
+  
+      fetch("https://laptopsdekho-backend.onrender.com/api/auth/verify", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then(res => {
+          if (!res.ok) throw new Error("Unauthorized")
+        })
+        .catch(() => {
+          localStorage.removeItem("token")
+          navigate("/login")
+        })
+    }, [])
+  
 
   // handle text input
   const handleChange = (e) => {

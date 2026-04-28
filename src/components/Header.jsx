@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './Header.css'
-import laptopsDekhoLog from '../assets/LaptopsDekhoLogo.png'
+import laptopsDekhoLog from '../assets/LaptopsDekhoLogo.webp'
 import menu from "../assets/menu.png"
 import { MenuLogicContext } from '../context/menuLogicContext'
 const Header = () => {
