@@ -44,12 +44,12 @@ if(menuConditionalState.menuVisbleConditionalData == true){
                     </li>
                    </Link>
                          
-                   <Link to="/AddBook">
+                   <Link to="/addLaptop">
                     <li>
                         <div>
                             
                             <img className="menu-btn" src={addpng} alt="Home Icon"/>
-                                <span>Sell Book</span>
+                                <span>Sell Laptop</span>
                         </div>
                     </li>
                    </Link>

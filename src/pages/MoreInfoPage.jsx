@@ -6,8 +6,10 @@ import { moreInfoContext } from "../context/MoreInfoContext";
 
 const MoreInfoPage = () => {
   const { moreInfoData } = useContext(moreInfoContext);
+// console.log(moreInfoData);
 
-  const [activeImg, setActiveImg] = useState(moreInfoData?.image);
+  // 🔥 first image set
+  const [activeImg, setActiveImg] = useState(moreInfoData?.images?.[0]);
 
   if (!moreInfoData) return <h2>Loading...</h2>;
 
@@ -18,13 +20,13 @@ const MoreInfoPage = () => {
 
       <div className="contentDiv">
 
-        {/* 🔥 LEFT SIDE (IMAGE) */}
+        {/* LEFT */}
         <div className="imgSection">
 
           <img src={activeImg} className="mainImg" />
 
           <div className="thumbs">
-            {[moreInfoData.image, moreInfoData.image].map((img, i) => (
+            {moreInfoData.images?.map((img, i) => (
               <img
                 key={i}
                 src={img}
@@ -36,7 +38,7 @@ const MoreInfoPage = () => {
 
         </div>
 
-        {/* 🔥 RIGHT SIDE (DETAILS) */}
+        {/* RIGHT */}
         <div className="detailsSection">
 
           <h2 className="name">{moreInfoData.name}</h2>
@@ -51,18 +53,15 @@ const MoreInfoPage = () => {
             <span>📍 {moreInfoData.location}</span>
           </div>
 
-          {/* 🔥 SPECS */}
+          {/* SPECS */}
           <div className="specGrid">
-            <div><b>RAM</b><br />{moreInfoData.specs?.ram}</div>
-            <div><b>Processor</b><br />{moreInfoData.specs?.processor}</div>
-            <div><b>Storage</b><br />{moreInfoData.specs?.storage}</div>
-            <div><b>Screen</b><br />{moreInfoData.specs?.screenSize}</div>
+            <div><b>RAM</b><br />{moreInfoData.ram}</div>
+            <div><b>Processor</b><br />{moreInfoData.processor}</div>
+            <div><b>Storage</b><br />{moreInfoData.storage}</div>
+            {/* <div><b>Condition</b><br />{moreInfoData.condition}</div> */}
           </div>
 
-          {/* 🔥 RETURN */}
-          <p className="return">{moreInfoData.return}</p>
-
-          {/* 🔥 BUTTON */}
+          {/* BUTTON */}
           <button className="contactBtn">Contact Seller</button>
 
         </div>

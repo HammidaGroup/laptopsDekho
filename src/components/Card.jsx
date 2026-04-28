@@ -9,25 +9,29 @@ const Card = ({value}) => {
       setMoreInfoData(value)
       
       // location.href="/moreInfo"
+      
     }
     useEffect(()=>{
+      // console.log(value);
       // console.log(moreInfoData);
       
     },[cardHandler])
   return (
-    <div className="card" onClick={cardHandler}>
-      <Link to="/moreInfo">
-      <div className="imgDiv">
-        <img src={value.image} alt="Laptop" />
-      </div>
-   <div className="infoDiv">
-       <h3>{value.name}</h3>
+<div className="card">
+  <Link to="/moreInfo" onClick={() => setMoreInfoData(value)}>
+
+    <div className="imgDiv">
+      <img src={value.images?.[0]} alt="Laptop" />
+    </div>
+
+    <div className="infoDiv">
+      <h3>{value.name}</h3>
       <p className="price">₹{value.price}</p>
       <p className="verified">✔ Verified</p>
-      <p className="return">{value.return}</p>
-   </div>
-    </Link>
     </div>
+
+  </Link>
+</div>
   )
 }
 

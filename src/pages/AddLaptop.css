@@ -1,0 +1,50 @@
+.addLaptop {
+  height: 100vh;
+  width: 100vw;
+}
+.addLaptop h2{
+  text-align: center;
+  margin-top: 20px;
+  color: #000;
+}
+
+.formDiv {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.preview {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.preview img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}

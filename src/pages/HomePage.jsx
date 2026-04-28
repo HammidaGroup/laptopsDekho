@@ -12,7 +12,7 @@ const HomePage = () => {
 
   const [laptopsData, setLaptopsData] = useState([])
   const getlaptopsData = async ()=>{
-  const response =  await fetch("./data.json")
+  const response =  await fetch("https://laptopsdekho-backend.onrender.com/api/get/laptops/data")
   const laptopsData = await response.json()
   // console.log(laptopsData);
   
