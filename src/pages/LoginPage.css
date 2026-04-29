@@ -36,7 +36,7 @@
 
 .login-box img{
     width: 80px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 .google-btn {
   margin-top: 20px;
@@ -44,9 +44,9 @@
   padding: 12px;
   border-radius: 10px;
   border: none;
-  background: #fff;
+  /* background: #fff; */
   /* background: #000; */
-  color: #1e293b;
+  color: #d2d5db;
   display: flex;
   align-items: center;
   justify-content: center;
