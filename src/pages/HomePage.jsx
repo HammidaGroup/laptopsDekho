@@ -6,17 +6,23 @@ import Card from '../components/Card'
 import Menu from '../components/Menu'
 import SearchSlider from '../components/SearchSlider'
 import { searchContext } from '../context/SearchContext'
+import Adding from '../components/Adding'
 
 const HomePage = () => {
   const { searchTerm, setSearchTerm, selectedRange, setSelectedRange } = useContext(searchContext);
 
   const [laptopsData, setLaptopsData] = useState([])
   const getlaptopsData = async ()=>{
+    try {
+      
   const response =  await fetch("https://laptopsdekho-backend.onrender.com/api/get/laptops/data")
   const laptopsData = await response.json()
   // console.log(laptopsData);
   
    setLaptopsData(laptopsData)
+    } catch (error) {
+      console.error("Error fetching laptops data:");
+    }
     
   }
   useEffect(()=>{
@@ -56,6 +62,7 @@ if(laptopsData.length==0) return console.log("not a laptopsData")
     <Menu/>
 <HomeHero/>
 <SearchSlider/>
+<Adding/>
  {chunkArray(filteredData, 2).map((group, index) => (
           <div className="card-cont" key={index}>
             {group.map((data) => (

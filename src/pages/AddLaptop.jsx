@@ -4,12 +4,14 @@ import axios from "axios";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
 import { useNavigate } from "react-router-dom";
+import Adding from "../components/Adding";
 
 
 const AddLaptop = () => {
 const navigate = useNavigate();
 
   const [images, setImages] = useState([]);
+  const [isAdding, setIsAdding] = useState(false);
   const [form, setForm] = useState({
     brandName: "",
     price: "",
@@ -72,21 +74,27 @@ const navigate = useNavigate();
 
     // 👉 yaha backend API call karega
 
+    setIsAdding(true);
     axios.post("https://laptopsdekho-backend.onrender.com/api/laptop/add", data)
         .then((res) => {
           console.log("Laptop added successfully", res.data);
+          setIsAdding(false);
+          navigate("/");
         })
         .catch((err) => {
           console.error("Error adding laptop", err);
+          setIsAdding(false);
         });
   };
 
   return (
     <div className="addLaptop">
+
       <Header/>
       <Menu/>
       <h2>Add Laptop</h2>
 <div className="formDiv">
+      {isAdding ? <Adding /> : null}
   
       <form onSubmit={handleSubmit}>
 

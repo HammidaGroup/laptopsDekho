@@ -1,0 +1,14 @@
+.addingDiv{
+    width: 400px;
+    height: 70%;
+    /* margin: 0 auto;  */
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 5px;
+    color: black;
+    background: #fff;
+}
