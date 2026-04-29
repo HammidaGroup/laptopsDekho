@@ -3,7 +3,7 @@ import './Header.css'
 import laptopsDekhoLog from '../assets/LaptopsDekhoLogo.webp'
 import menu from "../assets/menu.png"
 import { MenuLogicContext } from '../context/menuLogicContext'
-import SellLaptop from './BtnCompo/sellLaptop'
+import SellLaptop from './BtnCompo/SellLaptop'
 const Header = () => {
     const menuConditionalState = useContext(MenuLogicContext);
     
