@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgb(225, 219, 219);
+    background: #fff;
     height: 100px;
     width: 100%;
     position: relative;
@@ -12,6 +12,11 @@
 .headerL img{
 height: 100px;
 cursor: pointer;
+}
+.headerR{
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 .headerR img{
     height: 50px;

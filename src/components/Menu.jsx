@@ -44,7 +44,7 @@ if(menuConditionalState.menuVisbleConditionalData == true){
                     </li>
                    </Link>
                          
-                   <Link to="/addLaptop">
+                   <Link to="/sellLaptop">
                     <li>
                         <div>
                             

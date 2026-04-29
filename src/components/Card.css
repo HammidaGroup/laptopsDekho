@@ -8,8 +8,9 @@
     color: #000;
     padding: 10px;
     border-radius: 10px;
-    background: rgb(225, 219, 219);
+    background: #fff;
     cursor: pointer;
+    border: 1px solid #ddd;
 }
 .card .imgDiv{
     height: 100px;
