@@ -75,7 +75,7 @@ const navigate = useNavigate();
     // 👉 yaha backend API call karega
 
     setIsAdding(true);
-    axios.post("https://laptopsdekho-backend.onrender.com/api/laptop/add", data)
+    axios.post("http://localhost:3000/api/laptop/add", data)
         .then((res) => {
           console.log("Laptop added successfully", res.data);
           setIsAdding(false);

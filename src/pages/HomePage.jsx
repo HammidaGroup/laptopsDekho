@@ -18,7 +18,7 @@ const HomePage = () => {
   const response =  await fetch("https://laptopsdekho-backend.onrender.com/api/get/laptops/data")
   const laptopsData = await response.json()
   // console.log(laptopsData);
-  
+  laptopsData.reverse() // Reverse the array to show the latest laptops first
    setLaptopsData(laptopsData)
     } catch (error) {
       console.error("Error fetching laptops data:");
@@ -62,7 +62,7 @@ if(laptopsData.length==0) return console.log("not a laptopsData")
     <Menu/>
 <HomeHero/>
 <SearchSlider/>
-<Adding/>
+{/* <Adding/> */}
  {chunkArray(filteredData, 2).map((group, index) => (
           <div className="card-cont" key={index}>
             {group.map((data) => (
