@@ -12,6 +12,7 @@ const HomePage = () => {
   const { searchTerm, setSearchTerm, selectedRange, setSelectedRange } = useContext(searchContext);
 
   const [laptopsData, setLaptopsData] = useState([])
+  useEffect(()=>{
   const getlaptopsData = async ()=>{
     try {
       
@@ -25,7 +26,6 @@ const HomePage = () => {
     }
     
   }
-  useEffect(()=>{
   getlaptopsData()
 },[])
 
@@ -57,8 +57,8 @@ if(laptopsData.length==0) return console.log("not a laptopsData")
   
   return (
     <>
-    <div className="homeMainDiv">
     <Header/>
+    <div className="homeMainDiv">
     <Menu/>
 <HomeHero/>
 <SearchSlider/>

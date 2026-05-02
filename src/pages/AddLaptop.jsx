@@ -9,24 +9,22 @@ import Adding from "../components/Adding";
 
 const AddLaptop = () => {
 const navigate = useNavigate();
+const formData = new FormData()
+const token = localStorage.getItem("token")
 
   const [images, setImages] = useState([]);
   const [isAdding, setIsAdding] = useState(false);
-  const [form, setForm] = useState({
-    brandName: "",
-    price: "",
-    description: "",
-    ram: "",
-    processor: "",
-    storage: "",
-    location: ""
-  });
-
-
+ const [brandName, setBrandName] = useState()
+const [laptopPrice, setLaptopPrice] = useState()
+const [laptopAddress, setLaptopAddress] = useState()
+const [laptopDesc, setLaptopDesc] = useState()
+const [laptopRam, setLaptopRam] = useState()
+const [laptopProcessor, setLaptopProcessor] = useState()
+const [laptopStorage, setLaptopStorage] = useState()
+const [phoneNo, setPhoneNo] = useState()
    // 🔐 Token Verify
    
     useEffect(() => {
-      const token = localStorage.getItem("token")
   
       if (!token) {
         navigate("/login")
@@ -48,10 +46,7 @@ const navigate = useNavigate();
     }, [])
   
 
-  // handle text input
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  
 
   // handle multiple images
   const handleImageChange = (e) => {
@@ -61,21 +56,31 @@ const navigate = useNavigate();
 
   // submit
   const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const data = new FormData();
-    images.forEach((img) => data.append("images", img));
-
-    Object.keys(form).forEach((key) => {
-      data.append(key, form[key]);
-    });
+    e.preventDefault(); 
+formData.append("brandName",brandName)
+formData.append("laptopPrice",laptopPrice)
+formData.append("laptopAddress",laptopAddress)
+formData.append("laptopDesc",laptopDesc)
+formData.append("laptopRam",laptopRam)
+formData.append("laptopProcessor",laptopProcessor)
+formData.append("laptopStorage",laptopStorage)
+formData.append("phoneNo",phoneNo)
+images.forEach((img, index) => {
+  formData.append(`images`, img); // Append each image to FormData
+});  // Append the array of images to FormData
+formData.append("token",token)
 
     // console.log("FORM DATA READY", data);
+
 
     // 👉 yaha backend API call karega
 
     setIsAdding(true);
-    axios.post("https://laptopsdekho-backend.onrender.com/api/laptop/add", data)
+    axios.post("http://localhost:3000/api/laptop/add", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
         .then((res) => {
           console.log("Laptop added successfully", res.data);
           setIsAdding(false);
@@ -97,16 +102,16 @@ const navigate = useNavigate();
       {isAdding ? <Adding /> : null}
   
       <form onSubmit={handleSubmit}>
+<input type="number" name="number" placeholder="Enter Your Phone No" onChange={e=>setPhoneNo(e.target.value)}/>
+        <input name="brandName" placeholder="Brand Name" onChange={e=>setBrandName(e.target.value)} />
+        <input name="price" placeholder="Price" onChange={e=>setLaptopPrice(e.target.value)} />
+        <input name="location" placeholder="Location" onChange={e=>setLaptopAddress(e.target.value)} />
 
-        <input name="brandName" placeholder="Brand Name" onChange={handleChange} />
-        <input name="price" placeholder="Price" onChange={handleChange} />
-        <input name="location" placeholder="Location" onChange={handleChange} />
+        <textarea name="description" placeholder="Description" onChange={e=>setLaptopDesc(e.target.value)} />
 
-        <textarea name="description" placeholder="Description" onChange={handleChange} />
-
-        <input name="ram" placeholder="RAM (8GB, 16GB)" onChange={handleChange} />
-        <input name="processor" placeholder="Processor" onChange={handleChange} />
-        <input name="storage" placeholder="Storage" onChange={handleChange} />
+        <input name="ram" placeholder="RAM (8GB, 16GB)" onChange={e=>setLaptopRam(e.target.value)} />
+        <input name="processor" placeholder="Processor" onChange={e=>setLaptopProcessor(e.target.value)} />
+        <input name="storage" placeholder="Storage" onChange={e=>setLaptopStorage(e.target.value)} />
 
         {/* MULTIPLE IMAGE INPUT */}
         <input type="file" multiple onChange={handleImageChange} />

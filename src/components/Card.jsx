@@ -18,7 +18,7 @@ const Card = ({value}) => {
     },[cardHandler])
   return (
 <div className="card">
-  <Link to="/moreInfo" onClick={() => setMoreInfoData(value)}>
+  <Link to={`/moreInfo?id=${value.id}`} onClick={() => setMoreInfoData(value)}>
 
     <div className="imgDiv">
       <img src={value.images?.[0]} alt="Laptop" />
