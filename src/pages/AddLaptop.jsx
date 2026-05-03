@@ -4,7 +4,7 @@ import axios from "axios";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
 import { useNavigate } from "react-router-dom";
-import Adding from "../components/Adding";
+import Adding from "../components/loadingCompo/Adding";
 
 
 const AddLaptop = () => {

@@ -3,25 +3,35 @@ import "./MoreInfoPage.css";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
 import { moreInfoContext } from "../context/MoreInfoContext";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
+import LoadingMoreInfo from "../components/loadingCompo/LoadingMoreInfo";
 
 const MoreInfoPage = () => {
+  const navigate = useNavigate();
   const { moreInfoData } = useContext(moreInfoContext);
   const [moreInfoDataBackend, setMoreInfoDataBackend] = useState([]);
   const [activeImg, setActiveImg] = useState(null);
 
   const [params] = useSearchParams();
+  // const params = new URLSearchParams(location.search);
+  // const url = new URL(window.location.href);
   const id = params.get("id");
 
+
+  // console.log(location);
   // 🔥 FETCH DATA
   useEffect(() => {
-    if (!id) return;
+    // if (!id) return;
 
-    axios
+    if (!moreInfoData || moreInfoData.length === 0) {
+       axios
       .post("https://laptopsdekho-backend.onrender.com/api/get/moreInfo", { id })
       .then((res) => setMoreInfoDataBackend(res.data))
       .catch((err) => console.log("Error:", err));
+      
+    }
+   
   }, [id]);
 
   // 🔥 SET ACTIVE IMAGE
@@ -63,7 +73,10 @@ const MoreInfoPage = () => {
       <Menu />
 
       <div className="contentDiv">
-
+        {(data?.length === 0 && moreInfoDataBackend?.length === 0) ? <LoadingMoreInfo />  : null}
+      
+            {/* LEFT */}
+            
         {/* LEFT */}
         <div className="imgSection">
 

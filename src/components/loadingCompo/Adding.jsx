@@ -1,6 +1,6 @@
-import React from 'react'
+// import React from 'react'
 import "./Adding.css"
-import loading from "../assets/loading.gif"
+import loading from "../../assets/loading.gif"
 const Adding = () => {
   return (
     <div className="addingDiv">

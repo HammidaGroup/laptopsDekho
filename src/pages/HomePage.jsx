@@ -6,7 +6,7 @@ import Card from '../components/Card'
 import Menu from '../components/Menu'
 import SearchSlider from '../components/SearchSlider'
 import { searchContext } from '../context/SearchContext'
-import Adding from '../components/Adding'
+// import Adding from '../components/Adding'
 
 const HomePage = () => {
   const { searchTerm, setSearchTerm, selectedRange, setSelectedRange } = useContext(searchContext);
