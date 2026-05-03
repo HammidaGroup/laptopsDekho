@@ -61,10 +61,16 @@ const MoreInfoPage = () => {
 
   // 🔥 CONTACT HANDLER
   const contactHandler = () => {
-    const phoneNo = data.phoneNo;
-    if (!phoneNo) return alert("Phone number not available");
 
-    window.open(`https://wa.me/${phoneNo}`, "_blank");
+    const message = `
+      I Want Buy This Laptop 
+      url : https://laptopsDekho.xyz/moreInfo${location.search}
+    `
+    const url = `https://wa.me/917571950460?text=${encodeURIComponent(message)}`;
+    window.location.href = url;
+   
+
+   
   };
 
   return (
