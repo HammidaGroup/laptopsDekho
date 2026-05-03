@@ -1,6 +1,6 @@
 .homeMainDiv{
     /* background: red; */
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -11,6 +11,14 @@
     width: 100vw;
     /* padding: 10px 0px; */
 }
+.homeMainDiv .loadingDiv{
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   padding: 50px;
+}
+
 .card-cont{
     /* background: #000; */
     width: 100%;
