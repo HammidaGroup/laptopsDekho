@@ -135,7 +135,7 @@ const MoreInfoPage = () => {
 
           {/* BUTTON */}
           <button className="contactBtn" onClick={contactHandler}>
-            Contact Seller
+            Buy Now
           </button>
 
         </div>
