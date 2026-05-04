@@ -33,4 +33,7 @@
     .card-cont{
         width: 45%;
     }
+    .homeMainDiv{
+        display: flex;
+    }
 }
