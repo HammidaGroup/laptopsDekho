@@ -5,20 +5,34 @@ import Menu from '../components/Menu'
 import loadingGif from "../assets/loading.gif"
 import DashCard from '../components/cardCompo/DashCard'
 const DashPage = () => {
+  const formData = new FormData()
+  const token = localStorage.getItem("token")
       const [isLoading, setIsLoading] = useState(true)
+
 const [laptopsData, setLaptopsData] = useState([])
+formData.append("token", token)
+
        useEffect(()=>{
         const getlaptopsData = async ()=>{
           try {
-            
-        const response =  await fetch("./data.json")
+
+
+        const response =  await fetch("http://localhost:3000/api/data/dashboard", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${token}`
+          },
+          body: formData
+        })
         const laptopsData = await response.json()
         // console.log(laptopsData);
-        setLaptopsData(laptopsData)
-        laptopsData.reverse() // Reverse the array to show the latest laptops first
+        setLaptopsData(laptopsData.data)
+        // laptopsData.reverse() // Reverse the array to show the latest laptops first
+        console.log(laptopsData.data);
+        
           setIsLoading(false)
           } catch (error) {
-            console.error("Error fetching laptops data:");
+            console.error("Error fetching laptops data:", error);
           }
           
         }

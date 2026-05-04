@@ -48,7 +48,7 @@ const filteredData = laptopsData.filter((item) => {
 
   return matchesSearch && matchesPrice;
 });
-// if(laptopsData.length==0) return console.log("not a laptopsData")
+
  // 🔥 Chunk Books (2 per row)
   const chunkArray = (arr, size) => {
     const result = [];

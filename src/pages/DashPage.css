@@ -1,10 +1,10 @@
 .dashPageDiv{
-    background: #000;
-    height: 100%;
+    /* background: #000; */
+    height: 100vh;
     width: 100vw;
 }
 .dashCardDiv{
-    background: red;
+    /* background: red; */
     display: flex;
     /* flex-direction: column; */
     flex-wrap: wrap;
@@ -13,6 +13,7 @@
     overflow-y: scroll;
     width: 100vw;
 }
+
 .card-cont{
     width: 100%;
 }

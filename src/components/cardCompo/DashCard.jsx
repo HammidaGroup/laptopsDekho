@@ -6,9 +6,16 @@ const DashCard = ({value}) => {
   
   return (
     <div className="dashCard">
-        <img className='editBtn' src={editPng} alt="editBtn" />
-        <img src={value.image} alt="images" />
-    <p>{value.name}</p>
+       <div className="imgDiv">
+         <img className='editBtn' src={editPng} alt="editBtn" />
+        <img className='laptopImg' src={value.laptopImg[0]} alt="images" />
+       </div>
+    <div className="detailsDiv">
+      <p>{value.brandName}</p>
+      <p>{value.description}</p>
+      <p>Price: ₹{value.laptopPrice}</p>
+
+    </div>
     <div className="btnsDiv">
         <button>Delete</button>
         <button>Parmote</button>
