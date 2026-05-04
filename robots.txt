@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /assets/
+Allow: /images/
+
+# Block unnecessary
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://laptopsdekho.xyz/sitemap.xml
