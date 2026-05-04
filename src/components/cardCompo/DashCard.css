@@ -1,0 +1,25 @@
+.dashCard{
+    background: #741919;
+    color: black;
+    width: 45vw;
+    border-radius: 10px;
+    min-height: 200px;
+    position: relative;
+}
+.dashCard .editBtn{
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    cursor: pointer;
+}
+.dashCard .btnsDiv{
+    /* background: #000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+}

@@ -8,6 +8,7 @@ import SearchSlider from '../components/SearchSlider'
 import { searchContext } from '../context/SearchContext'
 // import Adding from '../components/Adding'
 import loadingGif from "../assets/loading.gif"
+import Done from '../components/Done'
 
 const HomePage = () => {
   const { searchTerm, setSearchTerm, selectedRange, setSelectedRange } = useContext(searchContext);
@@ -66,6 +67,7 @@ const filteredData = laptopsData.filter((item) => {
 <HomeHero/>
 <SearchSlider/>
 {/* <Adding/> */}
+<Done/>
  {IsLoading ? (
           <div className="loadingDiv">
             <img className='loadingGif' src={loadingGif} alt="Loading..." />

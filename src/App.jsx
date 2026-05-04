@@ -7,6 +7,7 @@ import AddLaptop from './pages/AddLaptop'
 import LoginSucsess from './middlewares/LoginSucsess'
 import ProtectedRoute from './middlewares/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
+import DashPage from './pages/DashPage'
 
 const App = () => {
   
@@ -18,11 +19,8 @@ const App = () => {
       <Route path='/' element={<HomePage/>}/>
       <Route path='/login' element={<LoginPage/>}/>
       <Route path='/moreInfo' element={<MoreInfoPage/>}/>
-      <Route path='/sellLaptop' element={
-        // <ProtectedRoute>
-          <AddLaptop />
-        // </ProtectedRoute>
-      }/>
+      <Route path='/sellLaptop' element={ <AddLaptop /> }/>
+      <Route path='/dashBoard' element={ <DashPage/> }/>
       <Route path='/login-success' element={<LoginSucsess/>}/>
     </Routes>
     </>

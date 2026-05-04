@@ -1,0 +1,23 @@
+.dashPageDiv{
+    background: #000;
+    height: 100%;
+    width: 100vw;
+}
+.dashCardDiv{
+    background: red;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    overflow-y: scroll;
+    width: 100vw;
+}
+.card-cont{
+    width: 100%;
+}
+@media (min-width:643px) {
+    .card-cont{
+        width: 45%;
+    }
+}

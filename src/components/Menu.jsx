@@ -62,7 +62,7 @@ if(menuConditionalState.menuVisbleConditionalData == true){
                         </div>
                     </li>
                    </Link>
-                   <Link to="/DashBoard">
+                   <Link to="/dashBoard">
                     <li>
                         <div>
                             

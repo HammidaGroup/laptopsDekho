@@ -5,15 +5,17 @@ import Header from "../components/Header";
 import Menu from "../components/Menu";
 import { useNavigate } from "react-router-dom";
 import Adding from "../components/loadingCompo/Adding";
+import Done from "../components/Done";
 
 
 const AddLaptop = () => {
 const navigate = useNavigate();
 const formData = new FormData()
 const token = localStorage.getItem("token")
+const [isAdding, setIsAdding] = useState(false);
+const [isDone, setIsDone] = useState(false)
 
   const [images, setImages] = useState([]);
-  const [isAdding, setIsAdding] = useState(false);
  const [brandName, setBrandName] = useState()
 const [laptopPrice, setLaptopPrice] = useState()
 const [laptopAddress, setLaptopAddress] = useState()
@@ -76,7 +78,7 @@ formData.append("token",token)
     // 👉 yaha backend API call karega
 
     setIsAdding(true);
-    axios.post("http://localhost:3000/api/laptop/add", formData, {
+    axios.post("https://laptopsdekho-backend.onrender.com/api/laptop/add", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -84,7 +86,7 @@ formData.append("token",token)
         .then((res) => {
           console.log("Laptop added successfully", res.data);
           setIsAdding(false);
-          navigate("/");
+          setIsDone(true);
         })
         .catch((err) => {
           console.error("Error adding laptop", err);
@@ -96,11 +98,11 @@ formData.append("token",token)
     <div className="addLaptop">
 
       <Header/>
+   { isDone ? <Done/> : null }
       <Menu/>
       <h2>Add Laptop</h2>
 <div className="formDiv">
       {isAdding ? <Adding /> : null}
-  
       <form onSubmit={handleSubmit}>
 <input type="number" name="number" placeholder="Enter Your Phone No" onChange={e=>setPhoneNo(e.target.value)}/>
         <input name="brandName" placeholder="Brand Name" onChange={e=>setBrandName(e.target.value)} />
