@@ -67,7 +67,7 @@ const filteredData = laptopsData.filter((item) => {
 <HomeHero/>
 <SearchSlider/>
 {/* <Adding/> */}
-<Done/>
+{/* <Done/> */}
  {IsLoading ? (
           <div className="loadingDiv">
             <img className='loadingGif' src={loadingGif} alt="Loading..." />
