@@ -8,6 +8,7 @@ import LoginSucsess from './middlewares/LoginSucsess'
 import ProtectedRoute from './middlewares/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
 import DashPage from './pages/DashPage'
+import About from './pages/About'
 
 const App = () => {
   
@@ -22,6 +23,7 @@ const App = () => {
       <Route path='/sellLaptop' element={ <AddLaptop /> }/>
       <Route path='/dashBoard' element={ <DashPage/> }/>
       <Route path='/login-success' element={<LoginSucsess/>}/>
+      <Route path="/about" element={<About />} />
     </Routes>
     </>
   )
