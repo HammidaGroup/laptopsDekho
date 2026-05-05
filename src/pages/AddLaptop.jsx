@@ -6,6 +6,7 @@ import Menu from "../components/Menu";
 import { useNavigate } from "react-router-dom";
 import Adding from "../components/loadingCompo/Adding";
 import Done from "../components/Done";
+import AddError from "../components/alertsCompo/AddError";
 
 
 const AddLaptop = () => {
@@ -14,6 +15,7 @@ const formData = new FormData()
 const token = localStorage.getItem("token")
 const [isAdding, setIsAdding] = useState(false);
 const [isDone, setIsDone] = useState(false)
+const [isError, setIsError] = useState(false)
 
   const [images, setImages] = useState([]);
  const [brandName, setBrandName] = useState()
@@ -91,6 +93,7 @@ formData.append("token",token)
         .catch((err) => {
           console.error("Error adding laptop", err);
           setIsAdding(false);
+          setIsError(true);
         });
   };
 
@@ -99,6 +102,7 @@ formData.append("token",token)
 
       <Header/>
    { isDone ? <Done/> : null }
+   { isError ? <AddError/> : null }
       <Menu/>
       <h2>Add Laptop</h2>
 <div className="formDiv">

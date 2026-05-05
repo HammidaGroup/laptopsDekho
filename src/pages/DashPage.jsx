@@ -6,6 +6,7 @@ import loadingGif from "../assets/loading.gif"
 import DashCard from '../components/cardCompo/DashCard'
 import DeleteAlert from '../components/alertsCompo/DeleteAlert'
 import { GlobleContext } from '../context/GlobleContext'
+import NotPropertyDash from '../components/alertsCompo/NotPropertyDash'
 const DashPage = () => {
 
   //context
@@ -17,6 +18,7 @@ const DashPage = () => {
   const token = localStorage.getItem("token")
       const [isLoading, setIsLoading] = useState(true)
       const [isDeleteAlert, setIsDeleteAlert] = useState(false)
+      const [isNotItems, setIsNotItems] = useState(false)
       const [deleteId, setDeleteId] = useState(null);
 
 const [laptopsData, setLaptopsData] = useState([])
@@ -37,6 +39,9 @@ useEffect(()=>{
         const laptopsData = await response.json()
         // console.log(laptopsData);
         setLaptopsData(laptopsData.data)
+        if(laptopsData.data.length === 0){
+          setIsNotItems(true)
+        }
         // laptopsData.reverse() // Reverse the array to show the latest laptops first
         // console.log(laptopsData.data);
         
@@ -107,6 +112,7 @@ useEffect(()=>{
 <Menu/>
 <div className="dashCardDiv">
    {isDeleteAlert && <DeleteAlert/>}
+   {isNotItems ? <NotPropertyDash /> : null}
     {isLoading ? (
           <div className="loadingDiv">
             <img className='loadingGif' src={loadingGif} alt="Loading..." />
