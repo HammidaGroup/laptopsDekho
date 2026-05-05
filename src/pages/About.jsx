@@ -8,30 +8,56 @@ const About = () => {
   return (
     <>
      <Helmet>
-        <title>About LaptopsDekho | Buy & Sell Used Laptops in India</title>
 
-        <meta
-          name="description"
-          content="LaptopsDekho is India's trusted platform to buy and sell second-hand laptops. We provide verified listings, best prices, and all India delivery."
-        />
+  {/* Basic SEO */}
+  <title>LaptopsDekho | Buy & Sell Used Laptops in India</title>
 
-        <meta
-          name="keywords"
-          content="used laptops India, buy laptop online, sell laptop India, second hand laptop marketplace"
-        />
+  <meta
+    name="description"
+    content="Buy and sell used laptops across India with LaptopsDekho. Safe delivery, trusted platform, and best prices for second-hand laptops."
+  />
 
-        {/* Open Graph */}
-        <meta property="og:title" content="About LaptopsDekho" />
-        <meta
-          property="og:description"
-          content="Buy & sell laptops across India with trust and easy delivery."
-        />
-        <meta property="og:image" content="/LaptopsDekhoLogo.webp" />
-        <meta property="og:url" content="https://laptopsdekho.xyz/about" />
+  <meta
+    name="keywords"
+    content="used laptops India, second hand laptop, buy laptop online India, sell laptop India, cheap laptops India"
+  />
 
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
+  <meta name="author" content="LaptopsDekho" />
+
+  {/* Canonical */}
+  <link rel="canonical" href="https://laptopsdekho.xyz/about" />
+
+  {/* Open Graph (Facebook, WhatsApp, Instagram) */}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LaptopsDekho | Buy & Sell Used Laptops in India" />
+  <meta
+    property="og:description"
+    content="India's trusted platform for buying and selling laptops with secure delivery and best deals."
+  />
+  <meta
+    property="og:image"
+    content="https://laptopsdekho.xyz/LaptopsDekhoIcon.webp"
+  />
+  <meta property="og:url" content="https://laptopsdekho.xyz/about" />
+  <meta property="og:site_name" content="LaptopsDekho" />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LaptopsDekho - Buy & Sell Laptops" />
+  <meta
+    name="twitter:description"
+    content="Buy and sell laptops across India with safe delivery and best prices."
+  />
+  <meta
+    name="twitter:image"
+    content="https://laptopsdekho.xyz/assets/LaptopsDekhoLogo.webp"
+  />
+
+  {/* Mobile + Theme */}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4a7dff" />
+
+</Helmet>
       <Header/>
       <Menu/>
     <div className="about-container">
