@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import "./DeleteAlert.css"
 import { GlobleContext } from '../../context/GlobleContext'
 const DeleteAlert = () => {
+    
 
     const {deleteContextAlert, setDeleteContextAlert} = useContext(GlobleContext)
   
