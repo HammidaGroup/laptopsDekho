@@ -36,7 +36,7 @@ const About = () => {
   />
   <meta
     property="og:image"
-    content="https://laptopsdekho.xyz/LaptopsDekhoIcon.webp"
+    content="https://laptopsdekho.xyz/LaptopsDekhoLogo.webp"
   />
   <meta property="og:url" content="https://laptopsdekho.xyz/about" />
   <meta property="og:site_name" content="LaptopsDekho" />
