@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import editPng from "../../assets/edit.png"
 import "./DashCard.css"
-const DashCard = ({value}) => {
+const DashCard = ({value , onDelete}) => {
 //   console.log(value);
   
   return (
@@ -17,7 +17,7 @@ const DashCard = ({value}) => {
 
     </div>
     <div className="btnsDiv">
-        <button>Delete</button>
+        <button onClick={() => onDelete(value._id)}>Delete</button>
         <button>Parmote</button>
     </div>
     </div>

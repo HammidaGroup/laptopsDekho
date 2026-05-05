@@ -1,23 +1,33 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./DashPage.css"
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 import loadingGif from "../assets/loading.gif"
 import DashCard from '../components/cardCompo/DashCard'
+import DeleteAlert from '../components/alertsCompo/DeleteAlert'
+import { GlobleContext } from '../context/GlobleContext'
 const DashPage = () => {
+
+  //context
+  const {deleteContextAlert, setDeleteContextAlert} = useContext(GlobleContext)
+  
+  
   const formData = new FormData()
+
   const token = localStorage.getItem("token")
       const [isLoading, setIsLoading] = useState(true)
+      const [isDeleteAlert, setIsDeleteAlert] = useState(false)
+      const [deleteId, setDeleteId] = useState(null);
 
 const [laptopsData, setLaptopsData] = useState([])
 formData.append("token", token)
 
-       useEffect(()=>{
-        const getlaptopsData = async ()=>{
+useEffect(()=>{
+  const getlaptopsData = async ()=>{
           try {
 
 
-        const response =  await fetch("http://localhost:3000/api/data/dashboard", {
+        const response =  await fetch("https://laptopsdekho-backend.onrender.com/api/data/dashboard", {
           method: "POST",
           headers: {
             "Authorization": `Bearer ${token}`
@@ -28,7 +38,7 @@ formData.append("token", token)
         // console.log(laptopsData);
         setLaptopsData(laptopsData.data)
         // laptopsData.reverse() // Reverse the array to show the latest laptops first
-        console.log(laptopsData.data);
+        // console.log(laptopsData.data);
         
           setIsLoading(false)
           } catch (error) {
@@ -38,7 +48,50 @@ formData.append("token", token)
         }
         getlaptopsData()
       },[])
+
+      //for delete alert
+      useEffect(() => {
+  if (deleteContextAlert === true && deleteId) {
+    deleteLaptop(deleteId);
+  }
+
+  if (deleteContextAlert === false) {
+    setIsDeleteAlert(false);
+    setDeleteId(null);
+  }
+}, [deleteContextAlert]);
+      const deleteLaptop = async (id) => {
+  try {
+    
+    formData.append("laptopId", id);
+
+    const response = await fetch("https://laptopsdekho-backend.onrender.com/api/data/deleteLaptop", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${token}`
+      },
+      body: formData
+    });
+
+    if (response.ok) {
+      setLaptopsData(prev =>
+        prev.filter(laptop => laptop._id !== id)
+      );
+    }
+  } catch (error) {
+    console.error("Error deleting laptop:", error);
+  } finally {
+    setIsDeleteAlert(false);
+    setDeleteContextAlert(null);
+    setDeleteId(null);
+  }
+};
       
+    const onDelete = (id) => {
+  setDeleteId(id);
+  setIsDeleteAlert(true);
+};
+
        // 🔥 Chunk Books (2 per row)
   const chunkArray = (arr, size) => {
     const result = [];
@@ -53,7 +106,7 @@ formData.append("token", token)
     <Header/>
 <Menu/>
 <div className="dashCardDiv">
-    
+   {isDeleteAlert && <DeleteAlert/>}
     {isLoading ? (
           <div className="loadingDiv">
             <img className='loadingGif' src={loadingGif} alt="Loading..." />
@@ -62,7 +115,7 @@ formData.append("token", token)
           chunkArray(laptopsData, 2).map((group, index) => (
             <div className="card-cont" key={index}>
               {group.map((data,ind) => (
-                <DashCard key={ind} value={data} />
+                <DashCard key={ind} value={data} onDelete={onDelete} />
               ))}
             </div>
         ))

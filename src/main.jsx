@@ -6,15 +6,18 @@ import MenuConditionalStateProvider from './context/menuLogicContext.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import SearchContextProvider from './context/SearchContext.jsx'
 import MoreInfoContextProvider from './context/MoreInfoContext.jsx'
+import GlobleContextProvider from './context/GlobleContext.jsx'
 
 createRoot(document.getElementById('root')).render(
  <BrowserRouter basename="/">
         <MenuConditionalStateProvider>
             <SearchContextProvider>
                 <MoreInfoContextProvider>
+<GlobleContextProvider>
 
 
                     <App />
+</GlobleContextProvider>
                 </MoreInfoContextProvider>
             </SearchContextProvider>
         </MenuConditionalStateProvider>
