@@ -65,7 +65,7 @@ const filteredData = laptopsData.filter((item) => {
     <div className="homeMainDiv">
     <Menu/>
 <HomeHero/>
-<SearchSlider/>
+{/* <SearchSlider/> */}
 {/* <Adding/> */}
 {/* <Done/> */}
  {IsLoading ? (

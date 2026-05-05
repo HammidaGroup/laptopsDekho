@@ -53,16 +53,8 @@ if(menuConditionalState.menuVisbleConditionalData == true){
                         </div>
                     </li>
                    </Link>
-                   <Link to="/cart">
-                    <li>
-                        <div>
-                            
-                            <img className="menu-btn" src={cartPng} alt="Home Icon"/>
-                                <span>Cart</span>
-                        </div>
-                    </li>
-                   </Link>
-                   <Link to="/dashBoard">
+
+                    <Link to="/dashBoard">
                     <li>
                         <div>
                             
@@ -71,14 +63,17 @@ if(menuConditionalState.menuVisbleConditionalData == true){
                         </div>
                     </li>
                    </Link>
-                         
+                   <Link to="/favourite">
                     <li>
                         <div>
-                            <img className="menu-btn" src={contactUspng} alt="Contact Us Icon"/>
-                                <span>Contact Us</span>
+                            
+                            <img className="menu-btn" src={cartPng} alt="Home Icon"/>
+                                <span>Cart</span>
                         </div>
                     </li>
-<Link to="/About">
+                   </Link>
+                  
+                       <Link to="/About">
                     <li>
                         <div>
                             <img className="menu-btn" src={aboutmepng} alt="Contact Us Icon"/>
@@ -86,7 +81,14 @@ if(menuConditionalState.menuVisbleConditionalData == true){
                         </div>
                     </li>
 
-</Link>
+</Link>  
+                    <li>
+                        <div>
+                            <img className="menu-btn" src={contactUspng} alt="Contact Us Icon"/>
+                                <span>Contact Us</span>
+                        </div>
+                    </li>
+
 <Link to="/privacy-policy">
                     <li>
                         <div>
