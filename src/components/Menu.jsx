@@ -32,6 +32,11 @@ if(menuConditionalState.menuVisbleConditionalData == true){
     menu = (
         <nav className="menu-box" >
                 <h2>Menu</h2>
+            
+                   {/* <div className="menuProfleBox"> */}
+                     {isLogin? <MenuProfile/>: <JoinBtn/>}
+                   {/* </div> */}
+           
                 <ul>
                   
                    <Link to="/">
@@ -100,7 +105,7 @@ if(menuConditionalState.menuVisbleConditionalData == true){
                     </li>
 </Link>
                     <li >
-                     {isLogin? <MenuProfile/>: <JoinBtn/>}
+                     {/* {isLogin? <MenuProfile/>: <JoinBtn/>} */}
                     
                     </li>
                     

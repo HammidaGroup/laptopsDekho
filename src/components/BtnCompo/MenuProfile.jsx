@@ -52,8 +52,10 @@ moreBtnRef.current.style.visibility="hidden"
             <img className='profileImg' src={profileData.image} alt="profile Image" />
         </div>
         <div className="right">
-            <h3>{profileData.firstName}</h3>
-            <img ref={moreBtnRef} onClick={profileClickHandler} className='moreBtn' src={morePng} alt="morebtn" />
+            <h3>{profileData.displayName
+}</h3>
+            {/* <img ref={moreBtnRef} onClick={profileClickHandler} className='moreBtn' src={morePng} alt="morebtn" /> */}
+            <LogoutBtn/>
         </div>
     </div>
     </>

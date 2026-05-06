@@ -1,11 +1,15 @@
 .menuProfile-div{
   /* background: #ad8181;  */
   width: 100%;
-  height: 30px;
+  /* height: 30px; */
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2px;  
-  position: absolute;
-  bottom: 100px;
+  /* position: absolute; */
+  /* bottom: 100px; */
+  border-bottom: #2d2d93 solid 1px;
   left: 0;
 }
 
@@ -13,6 +17,7 @@
     height: 100%;
 
     border-radius: 50%;
+    margin-top: 10px;
 
 }
 
@@ -21,6 +26,8 @@
 
     display: flex;
     align-items: center;
+    flex-direction: column;
+   
 }
 .menuProfile-div .right .moreBtn{
     height: 10px;
@@ -43,7 +50,7 @@
     
     align-items: center;
     flex-direction: column;
-    height: 100px;
+    /* height: 100%; */
     width: 100%;
 }
 .menuProfileInfo-div h3{
