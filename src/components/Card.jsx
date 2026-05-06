@@ -26,7 +26,7 @@ const Card = ({value}) => {
 
     <div className="infoDiv">
       <h3>{value.name}</h3>
-      <p className="">₹{value.price}</p>
+      <p className="p">₹{value.price}</p>
       <p className="verified">✔ Verified</p>
     </div>
 

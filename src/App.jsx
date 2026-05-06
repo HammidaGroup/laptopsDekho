@@ -9,6 +9,8 @@ import ProtectedRoute from './middlewares/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
 import DashPage from './pages/DashPage'
 import About from './pages/About'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import ContactUs from './pages/ContactUs'
 
 const App = () => {
   
@@ -24,6 +26,8 @@ const App = () => {
       <Route path='/dashBoard' element={ <DashPage/> }/>
       <Route path='/login-success' element={<LoginSucsess/>}/>
       <Route path="/about" element={<About />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/contact-us" element={<ContactUs />} />
     </Routes>
     </>
   )

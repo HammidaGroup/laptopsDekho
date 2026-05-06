@@ -82,12 +82,14 @@ if(menuConditionalState.menuVisbleConditionalData == true){
                     </li>
 
 </Link>  
+<Link to="/contact-us">
                     <li>
                         <div>
                             <img className="menu-btn" src={contactUspng} alt="Contact Us Icon"/>
                                 <span>Contact Us</span>
                         </div>
                     </li>
+</Link>
 
 <Link to="/privacy-policy">
                     <li>
