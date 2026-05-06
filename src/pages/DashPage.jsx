@@ -7,7 +7,13 @@ import DashCard from '../components/cardCompo/DashCard'
 import DeleteAlert from '../components/alertsCompo/DeleteAlert'
 import { GlobleContext } from '../context/GlobleContext'
 import NotPropertyDash from '../components/alertsCompo/NotPropertyDash'
+import { MenuLogicContext } from '../context/menuLogicContext'
 const DashPage = () => {
+  // menu ko close krne k liye jab bhi  page open ho to menu close ho jaye
+    const menuLogicContext = useContext(MenuLogicContext);
+      useEffect(()=>{
+        menuLogicContext.setisMenu(false)
+      },[])
 
   //context
   const {deleteContextAlert, setDeleteContextAlert} = useContext(GlobleContext)

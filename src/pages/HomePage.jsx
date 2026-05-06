@@ -9,8 +9,14 @@ import { searchContext } from '../context/SearchContext'
 // import Adding from '../components/Adding'
 import loadingGif from "../assets/loading.gif"
 import Done from '../components/Done'
+import { MenuLogicContext } from '../context/menuLogicContext'
 
 const HomePage = () => {
+  // menu ko close krne k liye jab bhi  page open ho to menu close ho jaye
+    const menuLogicContext = useContext(MenuLogicContext);
+      useEffect(()=>{
+        menuLogicContext.setisMenu(false)
+      },[])
   const { searchTerm, setSearchTerm, selectedRange, setSelectedRange } = useContext(searchContext);
 
   const [laptopsData, setLaptopsData] = useState([])

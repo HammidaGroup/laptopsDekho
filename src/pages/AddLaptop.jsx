@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./AddLaptop.css";
 import axios from "axios";
 import Header from "../components/Header";
@@ -7,9 +7,15 @@ import { useNavigate } from "react-router-dom";
 import Adding from "../components/loadingCompo/Adding";
 import Done from "../components/Done";
 import AddError from "../components/alertsCompo/AddError";
+import { MenuLogicContext } from "../context/menuLogicContext";
 
 
 const AddLaptop = () => {
+  // menu ko close krne k liye jab bhi  page open ho to menu close ho jaye
+    const menuLogicContext = useContext(MenuLogicContext);
+      useEffect(()=>{
+        menuLogicContext.setisMenu(false)
+      },[])
 const navigate = useNavigate();
 const formData = new FormData()
 const token = localStorage.getItem("token")

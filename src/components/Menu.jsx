@@ -18,7 +18,7 @@ const Menu = () => {
     const menuConditionalState = useContext(MenuLogicContext);
     const [isLogin, setIsLogin] = useState(false)
 let menu ;
-// console.log(menuConditionalState.menuVisbleConditionalData);
+// console.log(menuConditionalState.isMenu);
 
 useEffect(()=>{
     if (localStorage.getItem("token")) {
@@ -28,7 +28,7 @@ useEffect(()=>{
 }
 },[])
 
-if(menuConditionalState.menuVisbleConditionalData == true){
+if(menuConditionalState.isMenu == true){
     menu = (
         <nav className="menu-box" >
                 <h2>Menu</h2>
@@ -43,7 +43,7 @@ if(menuConditionalState.menuVisbleConditionalData == true){
                     <li>
                         <div>
                             
-                            <img className="menu-btn" src={homepng} alt="Home Icon"/>
+                            <img  className="menu-btn" src={homepng} alt="Home Icon"/>
                                 <span>Home</span>
                         </div>
                     </li>

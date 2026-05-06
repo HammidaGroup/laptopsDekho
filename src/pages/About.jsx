@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./About.css";
 import { Helmet } from "react-helmet";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
+import { MenuLogicContext } from "../context/menuLogicContext";
 
 const About = () => {
+    const menuLogicContext = useContext(MenuLogicContext);
+      // menu ko close krne k liye jab bhi  page open ho to menu close ho jaye
+      useEffect(()=>{
+        menuLogicContext.setisMenu(false)
+      },[])
   return (
     <>
      <Helmet>

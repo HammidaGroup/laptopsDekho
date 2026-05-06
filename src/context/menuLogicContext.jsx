@@ -2,9 +2,9 @@ import { createContext, useState } from "react";
 
 export const MenuLogicContext = createContext();
 const MenuConditionalStateProvider = ({children})=>{
-    const [menuVisbleConditionalData, setMenuVisbleConditionalData] = useState(false)
+    const [isMenu, setisMenu] = useState(false)
     return(
-        <MenuLogicContext.Provider value={{menuVisbleConditionalData , setMenuVisbleConditionalData}}>
+        <MenuLogicContext.Provider value={{isMenu , setisMenu}}>
             {children}
         </MenuLogicContext.Provider>
     )

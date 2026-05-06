@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./LoginPage.css";
 import laptopsDekhoLogo from "/LaptopsDekhoIcon.webp";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
+import { MenuLogicContext } from "../context/menuLogicContext";
 const LoginPage = () => {
+  // menu ko close krne k liye jab bhi  page open ho to menu close ho jaye
+   const menuLogicContext = useContext(MenuLogicContext);
+    useEffect(()=>{
+      menuLogicContext.setisMenu(false)
+    },[])
   return (
     <div className="login-container">
         <Header/>

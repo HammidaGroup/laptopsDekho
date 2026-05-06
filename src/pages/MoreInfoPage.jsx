@@ -6,18 +6,22 @@ import { moreInfoContext } from "../context/MoreInfoContext";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import LoadingMoreInfo from "../components/loadingCompo/LoadingMoreInfo";
+import { MenuLogicContext } from "../context/menuLogicContext";
 
 const MoreInfoPage = () => {
+  // menu ko close krne k liye jab bhi more info page open ho to menu close ho jaye
+  const menuLogicContext = useContext(MenuLogicContext);
+  useEffect(()=>{
+    menuLogicContext.setisMenu(false)
+  },[])
   const navigate = useNavigate();
   const { moreInfoData } = useContext(moreInfoContext);
   const [moreInfoDataBackend, setMoreInfoDataBackend] = useState([]);
   const [activeImg, setActiveImg] = useState(null);
 
   const [params] = useSearchParams();
-  // const params = new URLSearchParams(location.search);
-  // const url = new URL(window.location.href);
+  
   const id = params.get("id");
-
 
   // console.log(location);
   // 🔥 FETCH DATA

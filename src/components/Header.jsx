@@ -16,7 +16,7 @@ navigat("/")
     <div className="headerL"><img  onClick={logoHandler} src={laptopsDekhoLog} alt="laptopsDekho" /></div>
     <div className="headerR">
       <SellLaptop/>
-        <img onClick={() =>menuConditionalState.setMenuVisbleConditionalData(menuConditionalState.menuVisbleConditionalData == true ? false : true)
+        <img onClick={() =>menuConditionalState.setisMenu(menuConditionalState.isMenu == true ? false : true)
         } src={menu} alt="menu" />
     </div>
    </div>
