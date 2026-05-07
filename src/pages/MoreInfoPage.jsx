@@ -147,7 +147,7 @@ useEffect(() => {
               <p>send</p>
             </div>
             <div className="toolDiv">
-              <p>Listed : {listed}</p>
+              <p>{listed}</p>
             </div>
            </div>
           <h2 className="name">
