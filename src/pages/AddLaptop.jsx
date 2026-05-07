@@ -71,9 +71,9 @@ formData.append("brandName",brandName)
 formData.append("laptopPrice",laptopPrice)
 formData.append("laptopAddress",laptopAddress)
 formData.append("laptopDesc",laptopDesc)
-formData.append("laptopRam",laptopRam)
+formData.append("laptopRam",`${laptopRam}GB`) // Append RAM with "GB" suffix
 formData.append("laptopProcessor",laptopProcessor)
-formData.append("laptopStorage",laptopStorage)
+formData.append("laptopStorage",`${laptopStorage}GB`) // Append Storage with "GB" suffix
 formData.append("phoneNo",phoneNo)
 images.forEach((img, index) => {
   formData.append(`images`, img); // Append each image to FormData
@@ -116,14 +116,14 @@ formData.append("token",token)
       <form onSubmit={handleSubmit}>
 <input type="number" name="number" placeholder="Enter Your Phone No" onChange={e=>setPhoneNo(e.target.value)}/>
         <input name="brandName" placeholder="Brand Name" onChange={e=>setBrandName(e.target.value)} />
-        <input name="price" placeholder="Price" onChange={e=>setLaptopPrice(e.target.value)} />
+        <input type="number" name="price" placeholder="Price" onChange={e=>setLaptopPrice(e.target.value)} />
         <input name="location" placeholder="Location" onChange={e=>setLaptopAddress(e.target.value)} />
 
         <textarea name="description" placeholder="Description" onChange={e=>setLaptopDesc(e.target.value)} />
 
-        <input name="ram" placeholder="RAM (8GB, 16GB)" onChange={e=>setLaptopRam(e.target.value)} />
+        <input type="number" name="ram" placeholder="RAM (8GB, 16GB)" onChange={e=>setLaptopRam(e.target.value)} />
         <input name="processor" placeholder="Processor" onChange={e=>setLaptopProcessor(e.target.value)} />
-        <input name="storage" placeholder="Storage" onChange={e=>setLaptopStorage(e.target.value)} />
+        <input type="number" name="storage" placeholder="Storage" onChange={e=>setLaptopStorage(e.target.value)} />
 
         {/* MULTIPLE IMAGE INPUT */}
         <input type="file" multiple onChange={handleImageChange} />
