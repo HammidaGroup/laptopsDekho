@@ -117,7 +117,7 @@ formData.append("token",token)
 <input type="number" name="number" placeholder="Enter Your Phone No" onChange={e=>setPhoneNo(e.target.value)}/>
         <input name="brandName" placeholder="Brand Name" onChange={e=>setBrandName(e.target.value)} />
         <input type="number" name="price" placeholder="Price" onChange={e=>setLaptopPrice(e.target.value)} />
-        <input name="location" placeholder="Location" onChange={e=>setLaptopAddress(e.target.value)} />
+        <input name="location" placeholder="full Address" onChange={e=>setLaptopAddress(e.target.value)} />
 
         <textarea name="description" placeholder="Description" onChange={e=>setLaptopDesc(e.target.value)} />
 
