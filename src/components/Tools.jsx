@@ -32,13 +32,43 @@ useEffect(() => {
 
 }, []);
 
-const shareHandler = () => {
+const shareHandler = async () => {
 
-  const url = window.location.href;
+  const shareData = {
+    title: "LaptopsDekho",
+    text: "Check this laptop",
+    url: window.location.href
+  };
 
-  // Android intent
-  window.location.href =
-    `intent:${url}#Intent;action=android.intent.action.SEND;type=text/plain;end`;
+  // Native Share
+  if (navigator.share) {
+
+    try {
+
+      await navigator.share(shareData);
+
+    } catch (err) {
+
+      console.log(err);
+
+    }
+
+  } else {
+
+    // Fallback Copy
+    try {
+
+      await navigator.clipboard.writeText(window.location.href);
+
+      alert("Link copied");
+
+    } catch (err) {
+
+      console.log(err);
+
+    }
+
+  }
 
 };
   return (
