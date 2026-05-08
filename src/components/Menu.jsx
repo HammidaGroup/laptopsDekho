@@ -7,7 +7,7 @@ import privacypng from "../assets/privacy-policy.png";
 import addpng  from "../assets/add.png"
 
 import deshboardpng from "../assets/dashboard.png"
-import cartPng from "../assets/cart.png"
+import blackHeartPng from "../assets/black-heart.png";
 import { Link } from "react-router-dom";
 import { MenuLogicContext } from "../context/menuLogicContext";
 
@@ -68,12 +68,12 @@ if(menuConditionalState.isMenu == true){
                         </div>
                     </li>
                    </Link>
-                   <Link to="/favourite">
+                   <Link to="/favorites">
                     <li>
                         <div>
                             
-                            <img className="menu-btn" src={cartPng} alt="Home Icon"/>
-                                <span>Cart</span>
+                            <img className="menu-btn" src={blackHeartPng} alt="Home Icon"/>
+                                <span>Favorite</span>
                         </div>
                     </li>
                    </Link>

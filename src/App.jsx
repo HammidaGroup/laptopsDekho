@@ -11,6 +11,7 @@ import DashPage from './pages/DashPage'
 import About from './pages/About'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import ContactUs from './pages/ContactUs'
+import FavoritePage from './pages/FavoritePage'
 
 const App = () => {
   
@@ -23,6 +24,7 @@ const App = () => {
       <Route path='/login' element={<LoginPage/>}/>
       <Route path='/moreInfo' element={<MoreInfoPage/>}/>
       <Route path='/sellLaptop' element={ <AddLaptop /> }/>
+      <Route path="/favorites" element={<FavoritePage />} />
       <Route path='/dashBoard' element={ <DashPage/> }/>
       <Route path='/login-success' element={<LoginSucsess/>}/>
       <Route path="/about" element={<About />} />

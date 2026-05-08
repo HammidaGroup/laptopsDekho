@@ -114,7 +114,7 @@ const MoreInfoPage = () => {
 
         {/* RIGHT */}
         <div className="detailsSection">
-           <Tools value={data.listed || moreInfoDataBackend.listed  }/>
+           <Tools value={data||moreInfoDataBackend }/>
           <h2 className="name">
             {data.name || moreInfoDataBackend.brandName}
           </h2>

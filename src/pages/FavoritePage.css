@@ -1,0 +1,167 @@
+/* Favorite Page */
+
+.favoritePage{
+  padding: 90px 15px 100px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+/* Heading */
+
+.favoriteHeading{
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+/* Empty */
+
+.emptyFavorite{
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  color: #666;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Grid */
+
+.favoriteGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 18px;
+}
+
+/* Card */
+
+.favoriteCard{
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.06);
+  transition: 0.3s;
+  cursor: pointer;
+  border: 1px solid #eee;
+}
+
+.favoriteCard:hover{
+  transform: translateY(-4px);
+}
+
+/* Image */
+
+.favoriteImg{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: #f3f4f6;
+}
+
+/* Content */
+
+.favoriteContent{
+  padding: 14px;
+}
+
+.favoriteName{
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.favoritePrice{
+  font-size: 22px;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+/* Specs */
+
+.favoriteSpecs{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.specBox{
+  background: #eef2ff;
+  color: #374151;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Location */
+
+.favoriteLocation{
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+/* Button */
+
+.favoriteBtn{
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right,#4f46e5,#2563eb);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.favoriteBtn:hover{
+  opacity: 0.9;
+}
+
+.favoritePage{
+  padding-top: 80px;
+  padding-bottom: 100px;
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.favoriteHeading{
+  padding-left: 15px;
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #111827;
+}
+
+.emptyFavorite{
+  background: white;
+  margin: 15px;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  color: #666;
+}
+/* Responsive */
+
+@media(max-width:768px){
+
+  .favoriteHeading{
+    font-size: 24px;
+  }
+
+  .favoriteImg{
+    height: 170px;
+  }
+
+}
