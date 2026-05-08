@@ -12,6 +12,7 @@ import About from './pages/About'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import ContactUs from './pages/ContactUs'
 import FavoritePage from './pages/FavoritePage'
+import OpenInChrome from './middlewares/OpenInChrome'
 
 const App = () => {
   
@@ -21,6 +22,7 @@ const App = () => {
   
     <Routes>
       <Route path='/' element={<HomePage/>}/>
+      <Route path='/open' element={<OpenInChrome/>}/>
       <Route path='/login' element={<LoginPage/>}/>
       <Route path='/moreInfo' element={<MoreInfoPage/>}/>
       <Route path='/sellLaptop' element={ <AddLaptop /> }/>
