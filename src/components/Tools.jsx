@@ -34,19 +34,27 @@ useEffect(() => {
 
 const shareHandler = async () => {
 
-  try {
+  if (navigator.share) {
 
-    await navigator.share({
-      title: "LaptopsDekho",
-      text: "Check this laptop",
-      url: window.location.href
-    });
+    try {
 
-    console.log("shared");
+      await navigator.share({
+        title: "LaptopsDekho",
+        text: "Check this laptop",
+        url: window.location.href
+      });
 
-  } catch (error) {
+      console.log("shared");
 
-    console.log(error);
+    } catch (err) {
+
+      console.log(err);
+
+    }
+
+  } else {
+
+    alert("Share not supported");
 
   }
 
