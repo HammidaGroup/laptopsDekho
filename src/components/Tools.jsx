@@ -32,31 +32,13 @@ useEffect(() => {
 
 }, []);
 
-const shareHandler = async () => {
+const shareHandler = () => {
 
-  if (navigator.share) {
+  const url = window.location.href;
 
-    try {
-
-      await navigator.share({
-        title: "LaptopsDekho",
-        text: "Check this laptop",
-        url: window.location.href
-      });
-
-      console.log("shared");
-
-    } catch (err) {
-
-      console.log(err);
-
-    }
-
-  } else {
-
-    alert("Share not supported");
-
-  }
+  // Android intent
+  window.location.href =
+    `intent:${url}#Intent;action=android.intent.action.SEND;type=text/plain;end`;
 
 };
   return (
