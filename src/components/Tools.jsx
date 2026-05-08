@@ -34,18 +34,18 @@ useEffect(() => {
 
 const shareHandler = async () => {
 
-  const shareData = {
-    title: "LaptopsDekho",
-    text: "Check this laptop",
-    url: window.location.href
-  };
+  const url = window.location.href;
 
-  // Native Share
+  // Native share
   if (navigator.share) {
 
     try {
 
-      await navigator.share(shareData);
+      await navigator.share({
+        title: "LaptopsDekho",
+        text: "Check this laptop",
+        url
+      });
 
     } catch (err) {
 
@@ -55,18 +55,20 @@ const shareHandler = async () => {
 
   } else {
 
-    // Fallback Copy
-    try {
+    // fallback copy
+    const textarea = document.createElement("textarea");
 
-      await navigator.clipboard.writeText(window.location.href);
+    textarea.value = url;
 
-      alert("Link copied");
+    document.body.appendChild(textarea);
 
-    } catch (err) {
+    textarea.select();
 
-      console.log(err);
+    document.execCommand("copy");
 
-    }
+    document.body.removeChild(textarea);
+
+    alert("Link copied");
 
   }
 
