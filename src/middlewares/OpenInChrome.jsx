@@ -40,6 +40,7 @@ const OpenInChrome = () => {
 const styles = {
   container: {
     height: "100vh",
+    width:"100vw",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -47,7 +48,7 @@ const styles = {
     textAlign: "center",
     padding: "20px",
      color: "black",
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#fff",
   },
   button: {
     padding: "12px 20px",
