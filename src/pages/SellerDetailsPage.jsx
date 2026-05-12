@@ -13,7 +13,7 @@ const [data, setData] = useState([])
 const [isLoading, setIsLoading] = useState(true)
  useEffect(()=>{
 const fetchData = async () => {
-  const respose = await fetch(`http://localhost:3000/api/get/allProducts`, {
+  const respose = await fetch(`https://laptopsdekho-backend.onrender.com/api/get/allProducts`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
