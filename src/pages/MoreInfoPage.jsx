@@ -11,6 +11,7 @@ import sendImg from "../assets/send.png";
 import blackHeartPng from "../assets/black-heart.png";
 import redHeartPng from "../assets/red-heart.png";
 import Tools from "../components/Tools";
+import BuyerProfileBtn from "../components/profileCompo/BuyerProfileBtn";
 
 const MoreInfoPage = () => {
   // menu ko close krne k liye jab bhi more info page open ho to menu close ho jaye
@@ -115,6 +116,7 @@ const MoreInfoPage = () => {
         {/* RIGHT */}
         <div className="detailsSection">
            <Tools value={data||moreInfoDataBackend }/>
+           {/* <BuyerProfileBtn /> */}
           <h2 className="name">
             {data.name || moreInfoDataBackend.brandName}
           </h2>

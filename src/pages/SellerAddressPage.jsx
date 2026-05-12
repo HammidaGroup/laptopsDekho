@@ -46,7 +46,7 @@ const SellerAddressPage = () => {
       pincode: sellerAddress.pincode,
     };
 
-    console.log(pickup_location);
+    // console.log(pickup_location);
 
     localStorage.setItem("pickup_location", JSON.stringify(pickup_location));
 

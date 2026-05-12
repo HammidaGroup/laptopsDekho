@@ -8,6 +8,7 @@ import DeleteAlert from '../components/alertsCompo/DeleteAlert'
 import { GlobleContext } from '../context/GlobleContext'
 import NotPropertyDash from '../components/alertsCompo/NotPropertyDash'
 import { MenuLogicContext } from '../context/menuLogicContext'
+import AllProductsLinkCopy from '../components/AllProductsLinkCopy'
 const DashPage = () => {
   // menu ko close krne k liye jab bhi  page open ho to menu close ho jaye
     const menuLogicContext = useContext(MenuLogicContext);
@@ -119,6 +120,9 @@ useEffect(()=>{
 <div className="dashCardDiv">
    {isDeleteAlert && <DeleteAlert/>}
    {isNotItems ? <NotPropertyDash /> : null}
+   <div>
+   <AllProductsLinkCopy laptopsData={laptopsData} />
+   </div>
     {isLoading ? (
           <div className="loadingDiv">
             <img className='loadingGif' src={loadingGif} alt="Loading..." />

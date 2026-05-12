@@ -14,6 +14,7 @@ import ContactUs from './pages/ContactUs'
 import FavoritePage from './pages/FavoritePage'
 import OpenInChrome from './middlewares/OpenInChrome'
 import SellerAddressPage from './pages/SellerAddressPage'
+import SellerDetailsPage from './pages/SellerDetailsPage'
 
 const App = () => {
   
@@ -30,6 +31,7 @@ const App = () => {
       <Route path="/favorites" element={<FavoritePage />} />
       <Route path='/dashBoard' element={ <DashPage/> }/>
       <Route path='/seller-address' element={ <SellerAddressPage/> }/>
+      <Route path='/allProducts' element={ <SellerDetailsPage/> }/>
       <Route path='/login-success' element={<LoginSucsess/>}/>
       <Route path="/about" element={<About />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />

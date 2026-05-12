@@ -1,0 +1,21 @@
+.sellerDetailsPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 20px; */
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background: #f2f2f2;
+    color: #000;
+}
+.sellerDetailsCardDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100% ;
+    /* height: 100%; */
+    /* background: red; */
+}
