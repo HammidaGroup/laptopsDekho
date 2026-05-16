@@ -32,6 +32,7 @@ const [laptopRam, setLaptopRam] = useState()
 const [laptopProcessor, setLaptopProcessor] = useState()
 const [laptopStorage, setLaptopStorage] = useState()
 const [phoneNo, setPhoneNo] = useState()
+const [sellingMethod, setSellingMethod] = useState("direct")
    // 🔐 Token Verify
    
     useEffect(() => {
@@ -74,6 +75,7 @@ formData.append("laptopDesc",laptopDesc)
 formData.append("laptopRam",`${laptopRam}GB`) // Append RAM with "GB" suffix
 formData.append("laptopProcessor",laptopProcessor)
 formData.append("laptopStorage",`${laptopStorage}GB`) // Append Storage with "GB" suffix
+formData.append("sellingMethod",sellingMethod)
 formData.append("phoneNo",phoneNo)
 images.forEach((img, index) => {
   formData.append(`images`, img); // Append each image to FormData
@@ -124,6 +126,12 @@ formData.append("token",token)
         <input type="number" name="ram" placeholder="RAM (8GB, 16GB)" onChange={e=>setLaptopRam(e.target.value)} />
         <input name="processor" placeholder="Processor" onChange={e=>setLaptopProcessor(e.target.value)} />
         <input type="number" name="storage" placeholder="Storage" onChange={e=>setLaptopStorage(e.target.value)} />
+      <div className="checkBox">
+          <input onChange={e=>setSellingMethod("delivery")} type="radio" name="delivery" id="delivery" />
+        <label htmlFor="delivery">Safe Delivery Service</label>
+        <input onChange={e=>setSellingMethod("direct")} type="radio" name="direct" id="direct" />
+        <label htmlFor="direct">Direct Contact</label>
+      </div>
 
         {/* MULTIPLE IMAGE INPUT */}
         <input type="file" multiple onChange={handleImageChange} />

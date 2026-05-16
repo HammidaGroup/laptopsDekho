@@ -1,6 +1,7 @@
 .addLaptop {
   height: 100vh;
   width: 100vw;
+  color: #000;
 }
 .addLaptop h2{
   text-align: center;
@@ -25,6 +26,12 @@ input, textarea {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
+}
+
+.checkBox {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 button {
