@@ -16,7 +16,7 @@ const OrderBtn = ({value}) => {
    
   };
   return (
-  <button className='orderBtn' onClick={e=>orderHandler}>Order Now</button>
+  <button className='orderBtn' onClick={e=>orderHandler()}>Order Now</button>
   )
 
 }
