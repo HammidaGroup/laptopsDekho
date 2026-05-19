@@ -12,6 +12,7 @@ import blackHeartPng from "../assets/black-heart.png";
 import redHeartPng from "../assets/red-heart.png";
 import Tools from "../components/Tools";
 import BuyerProfileBtn from "../components/profileCompo/BuyerProfileBtn";
+import OrderBtn from "../components/BtnCompo/OrderBtn";
 
 const MoreInfoPage = () => {
   // menu ko close krne k liye jab bhi more info page open ho to menu close ho jaye
@@ -72,10 +73,11 @@ const MoreInfoPage = () => {
   const contactHandler = () => {
 
     const message = `
-      I Want Buy This Laptop 
+      I Want Buy This Laptop.
+      Please Provide More Details.
       url : https://laptopsDekho.xyz/moreInfo${location.search}
     `
-    const url = `https://wa.me/917571950460?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${data?.phoneNo || moreInfoDataBackend?.phoneNo}?text=${encodeURIComponent(message)}`;
     window.location.href = url;
    
 
@@ -115,7 +117,7 @@ const MoreInfoPage = () => {
 
         {/* RIGHT */}
         <div className="detailsSection">
-           <Tools value={data||moreInfoDataBackend }/>
+           <Tools value={data}/>
            {/* <BuyerProfileBtn /> */}
           <h2 className="name">
             {data.name || moreInfoDataBackend.brandName}
@@ -152,9 +154,17 @@ const MoreInfoPage = () => {
           </div>
 
           {/* BUTTON */}
-          <button className="contactBtn" onClick={contactHandler}>
-            Buy Now
+         <div className="btnsDiv">
+           <button className="contactBtn" onClick={contactHandler}>
+            Contact Seller
           </button>
+         {(
+  data?.sellingMethode === "delivery" ||
+  moreInfoDataBackend?.sellingMethode === "delivery"
+) && (
+  <OrderBtn value={{ params: location.search }} />
+)}
+         </div>
 
         </div>
       </div>

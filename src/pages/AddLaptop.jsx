@@ -32,7 +32,7 @@ const [laptopRam, setLaptopRam] = useState()
 const [laptopProcessor, setLaptopProcessor] = useState()
 const [laptopStorage, setLaptopStorage] = useState()
 const [phoneNo, setPhoneNo] = useState()
-const [sellingMethod, setSellingMethod] = useState("direct")
+const [sellingMethode, setSellingMethode] = useState("direct")
    // 🔐 Token Verify
    
     useEffect(() => {
@@ -75,7 +75,7 @@ formData.append("laptopDesc",laptopDesc)
 formData.append("laptopRam",`${laptopRam}GB`) // Append RAM with "GB" suffix
 formData.append("laptopProcessor",laptopProcessor)
 formData.append("laptopStorage",`${laptopStorage}GB`) // Append Storage with "GB" suffix
-formData.append("sellingMethod",sellingMethod)
+formData.append("sellingMethode",sellingMethode)
 formData.append("phoneNo",phoneNo)
 images.forEach((img, index) => {
   formData.append(`images`, img); // Append each image to FormData
@@ -127,9 +127,9 @@ formData.append("token",token)
         <input name="processor" placeholder="Processor" onChange={e=>setLaptopProcessor(e.target.value)} />
         <input type="number" name="storage" placeholder="Storage" onChange={e=>setLaptopStorage(e.target.value)} />
       <div className="checkBox">
-          <input onChange={e=>setSellingMethod("delivery")} type="radio" name="delivery" id="delivery" />
+          <input checked={sellingMethode=="delivery"} onChange={e=>setSellingMethode("delivery")} type="radio" name="delivery" id="delivery" />
         <label htmlFor="delivery">Safe Delivery Service</label>
-        <input onChange={e=>setSellingMethod("direct")} type="radio" name="direct" id="direct" />
+        <input checked={sellingMethode=="direct"} onChange={e=>setSellingMethode("direct")} type="radio" name="direct" id="direct" />
         <label htmlFor="direct">Direct Contact</label>
       </div>
 

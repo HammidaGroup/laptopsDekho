@@ -5,8 +5,8 @@ import blackHeartPng from "../assets/black-heart.png";
 import redHeartPng from "../assets/red-heart.png";
 
 const Tools = ({ value }) => {
-// console.log(value)
-  const [listed, setListed] = useState("");
+console.log(value)
+  const [listed, setListed] = useState();
   const [isFavorite, setIsFavorite] = useState(false);
 
   // 🔥 check favorite on load
@@ -95,7 +95,7 @@ const favoriteHandler = () => {
   // listed time
   useEffect(() => {
 
-    const oldTime = new Date(value.createdAt);
+    const oldTime = new Date(value.listed);
     const now = new Date();
 
     const diff = now - oldTime;
