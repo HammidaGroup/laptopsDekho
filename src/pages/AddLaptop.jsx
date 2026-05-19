@@ -32,7 +32,7 @@ const [laptopRam, setLaptopRam] = useState()
 const [laptopProcessor, setLaptopProcessor] = useState()
 const [laptopStorage, setLaptopStorage] = useState()
 const [phoneNo, setPhoneNo] = useState()
-const [sellingMethode, setSellingMethode] = useState("direct")
+const [sellingMethode, setSellingMethode] = useState("")
    // 🔐 Token Verify
    
     useEffect(() => {
@@ -72,9 +72,9 @@ formData.append("brandName",brandName)
 formData.append("laptopPrice",laptopPrice)
 formData.append("laptopAddress",laptopAddress)
 formData.append("laptopDesc",laptopDesc)
-formData.append("laptopRam",`${laptopRam}GB`) // Append RAM with "GB" suffix
+formData.append("laptopRam",laptopRam) // Append RAM with "GB" suffix
 formData.append("laptopProcessor",laptopProcessor)
-formData.append("laptopStorage",`${laptopStorage}GB`) // Append Storage with "GB" suffix
+formData.append("laptopStorage",laptopStorage) // Append Storage with "GB" suffix
 formData.append("sellingMethode",sellingMethode)
 formData.append("phoneNo",phoneNo)
 images.forEach((img, index) => {
